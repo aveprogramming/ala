@@ -1,13 +1,6 @@
-def order(args):
-    return args
+def reverse(func):
+    def wrapper(*args):
+        return func(*args[::-1])
+    return wrapper
 
-
-@order
-def reversed_arguments(argum):
-    arggs = []
-    for arg in argum:
-        arggs.append(arg)
-    return arggs[::-1]
-
-
-print(reversed_arguments('567'))
+print(reverse((1,2,3)))
