@@ -3,4 +3,10 @@ def reverse(func):
         return func(*args[::-1])
     return wrapper
 
-print(reverse((1,2,3)))
+@reverse
+def order(*args):
+    return args
+
+
+print(order(1,2,3,4,5))
+
